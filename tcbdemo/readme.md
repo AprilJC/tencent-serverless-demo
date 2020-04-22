@@ -41,16 +41,33 @@
    2.在项目模板中找到`.env.example`文件，修改名称为`.env`，并在其中配置对应的腾讯云 SecretId 和 SecretKey 信息：
     
     ```text
-       # .env
-       TENCENT_SECRET_ID=xxx
-       TENCENT_SECRET_KEY=xxx
+    # .env
+    TENCENT_SECRET_ID=xxx
+    TENCENT_SECRET_KEY=xxx
     ```
-   找到function->serverless.yaml文件，填入自己的SecretId 和 SecretKey。
+   找到**function->serverless.yaml**文件，填入自己的 SecretId 和 SecretKey。
    
    >说明:
      1. 如果没有腾讯云账号，请先[注册新账号](https://cloud.tencent.com/register)。
-     2. 如果已有腾讯云账号，可以在[ API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取 SecretId 和 SecretKey。
-
+     2. 如果已有腾讯云账号，可以在[ API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取**SecretId**和**SecretKey**。
+   
+   3.在`function->src`文件夹中，通过以下命令安装所需依赖：
+   ```bash
+   $ npm install
+   ```
+   
+   ### 部署
+   配置完成后，通过以下命令进行部署，并可以参数查看部署过程中的信息：
+   ```bash
+   $ sls --debiug
+   ```
+   访问命令行输出的 website url，即可查看您的 Serverless 站点.
+   
+   ### 移除
+   可通过以下命令移除项目：
+   ```bash
+   $ sls remove --debug
+   ```
 
 
 
