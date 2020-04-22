@@ -62,6 +62,7 @@
    
    ```bash
    $ serverless --debug
+   
    Initializing...
    Action: "deploy" - Stage: "dev" - App: "mongoDBAPP" - Instance: "mongoDBDemoMongo"
    Deploying...
