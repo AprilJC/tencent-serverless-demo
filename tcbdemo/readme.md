@@ -82,10 +82,28 @@
    Triggers: 
      apigw: 
        - https://service-dlq65ccq-1258834142.gz.apigw.tencentcs.com/release/users
+   
+   67s › mongoDBDemoSCF › Success
    ```
+   3. 最后部署静态网站，进入website目录，通过`serverless --debug`进行云函数部署，部署成功结果如下：
+   ```bash
+   $ serverless --debug
+
+   Initializing...
+   Action: "deploy" - Stage: "dev" - App: "mongoDBAPP" - Instance: "mongoDBDemoWebsite"
+   Deploying...
+
+   website: http://my-bucket-1258834142.cos-website.ap-guangzhou.myqcloud.com
+
+
+   8s › mongoDBDemoWebsite › Success
+   ```
+   访问命令行输出的 website url，即可查看您的 Serverless 站点。
    
    ### 移除
+   
    可通过以下命令移除项目：
+   
    ```bash
    $ sls remove --debug
    ```
