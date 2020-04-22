@@ -1,1 +1,3 @@
-请在function->serverless.yaml中填写用户自己的密钥
+# TCB MongoDB + SCF + Website 最佳实践
+
+##操作场景
