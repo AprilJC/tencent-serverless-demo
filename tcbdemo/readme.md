@@ -107,6 +107,9 @@
    ```bash
    $ sls remove --debug
    ```
+   
+   #### 更多组件
+   您可在[Serverless Component Repo](https://github.com/serverless/components)中查看更多组件信息
 
 
 
