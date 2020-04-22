@@ -62,7 +62,19 @@
    
    ```bash
    $ serverless --debug
+   Initializing...
+   Action: "deploy" - Stage: "dev" - App: "mongoDBAPP" - Instance: "mongoDBDemoMongo"
+   Deploying...
+
+   Region:    ap-guangzhou
+   Name:      Mydemo
+   EnvID:     Mydemo-dyxfxv
+   FreeQuota: basic
+
+   19s › mongoDBDemoMongo › Success
    ```
+   >注意: 由于sls运行角色限制，需要用户登录[访问管理角色页面](https://console.cloud.tencent.com/cam/role)，手动为**SLS_QcsRole**添加**TCBFullAccess**的策略，否则无法正常运行
+
    
    2. 接下来进入function目录下，同样通过`serverless --debug`进行云函数部署，部署成功结果如下：
    
