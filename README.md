@@ -1,1 +1,1 @@
-# tencent-serverless-demo-fullstack-serverless-tcb
+# tencent-serverless-demos
