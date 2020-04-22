@@ -12,7 +12,7 @@ inputs:
     error: index.html
     envPath: ./
   region: ap-guangzhou
-  bucketName: my-bucket111
+  bucketName: my-bucket
   protocol: http
   env:
     apiUrl: ${output:${stage}:${app}:mongoDBDemoSCF.Triggers.apigw.0}
