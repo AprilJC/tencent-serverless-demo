@@ -58,11 +58,31 @@
    ```
    
    ### 部署
-   配置完成后，通过以下命令进行部署，并可以参数查看部署过程中的信息：
+   1. 配置完成后，首先进入mongodb目录下，通过以下命令进行部署，创建一个新的云开发环境，并可以参数查看部署过程中的信息：
+   
    ```bash
-   $ sls --debiug
+   $ serverless --debug
    ```
-   访问命令行输出的 website url，即可查看您的 Serverless 站点.
+   
+   2. 接下来进入function目录下，同样通过`serverless --debug`进行云函数部署，部署成功结果如下：
+   
+   ```bash
+   $ serverless --debug
+
+   Initializing...
+   Action: "deploy" - Stage: "dev" - App: "mongoDBAPP" - Instance: "mongoDBDemoSCF"
+   Deploying...
+
+   FunctionName: MongoDBDemo
+   Description:  
+   Namespace:    default
+   Runtime:      Nodejs8.9
+   Handler:      index.main
+   MemorySize:   128
+   Triggers: 
+     apigw: 
+       - https://service-dlq65ccq-1258834142.gz.apigw.tencentcs.com/release/users
+   ```
    
    ### 移除
    可通过以下命令移除项目：
