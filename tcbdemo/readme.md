@@ -24,10 +24,10 @@
    安装完毕后，通过运行serverless -v命令，查看 Serverless Framework 的版本信息，确保版本信息不低于以下版本：
    ```bash
    $ serverless –v
-   Framework Core: 1.67.3
+   Framework Core: 1.68.0
    Plugin: 3.6.6
    SDK: 2.3.0
-   Components: 2.30.0
+   Components: 2.30.1
    ```
    
    ### 配置
@@ -58,59 +58,44 @@
    ```
    
    ### 部署
-   1. 配置完成后，首先进入mongodb目录下，通过以下命令进行部署，创建一个新的云开发环境，并可以参数查看部署过程中的信息：
+   配置完成后，进入含有.env文件的根目录下，通过以下命令进行部署，创建一个新的云开发环境，将后台代码部署到SCF云函数平台，并通过website组件部署静态网站：
    
    ```bash
-   $ serverless --debug
+   $ sls deploy --all
    
-   Initializing...
-   Action: "deploy" - Stage: "dev" - App: "mongoDBAPP" - Instance: "mongoDBDemoMongo"
-   Deploying...
+   serverless ⚡ framework
 
-   Region:    ap-guangzhou
-   Name:      Mydemo
-   EnvID:     Mydemo-dyxfxv
-   FreeQuota: basic
+   mongoDBDemoMongo:
+     Region:    ap-guangzhou
+     Name:      Mydemo
+     EnvID:     Mydemo-dyxfxv
+     FreeQuota: basic
 
-   19s › mongoDBDemoMongo › Success
+   mongoDBDemoSCF: 
+     FunctionName: MongoDBDemo
+     Description:  
+       Namespace:    default
+       Runtime:      Nodejs8.9
+       Handler:      index.main
+       MemorySize:   128
+       Triggers: 
+         apigw: 
+            - https://service-dlq65ccq-1258834142.gz.apigw.tencentcs.com/release/users
+
+   mongoDBDemoWebsite: 
+      website: http://my-bucket-1258834142.cos-website.ap-guangzhou.myqcloud.com
+
+   78s › tcbdemo › Success
+
    ```
-   >注意: 由于sls运行角色限制，需要用户登录[访问管理角色页面](https://console.cloud.tencent.com/cam/role)，手动为**SLS_QcsRole**添加**TCBFullAccess**的策略，否则无法正常运行
+   
+   >注意: 
+   >1. 由于sls运行角色限制，需要用户登录[访问管理角色页面](https://console.cloud.tencent.com/cam/role)，手动为**SLS_QcsRole**添加**TCBFullAccess**的策略，否则无法正常运行
+   >2. 当前 deploy --all指令只支持2.30.1及以上版本Serverless Framework Component，请确定您的组件已更新至最新版本
+   
 
    
-   2. 接下来进入function目录下，同样通过`serverless --debug`进行云函数部署，部署成功结果如下：
    
-   ```bash
-   $ serverless --debug
-
-   Initializing...
-   Action: "deploy" - Stage: "dev" - App: "mongoDBAPP" - Instance: "mongoDBDemoSCF"
-   Deploying...
-
-   FunctionName: MongoDBDemo
-   Description:  
-   Namespace:    default
-   Runtime:      Nodejs8.9
-   Handler:      index.main
-   MemorySize:   128
-   Triggers: 
-     apigw: 
-       - https://service-dlq65ccq-1258834142.gz.apigw.tencentcs.com/release/users
-   
-   67s › mongoDBDemoSCF › Success
-   ```
-   3. 最后部署静态网站，进入website目录，通过`serverless --debug`进行云函数部署，部署成功结果如下：
-   ```bash
-   $ serverless --debug
-
-   Initializing...
-   Action: "deploy" - Stage: "dev" - App: "mongoDBAPP" - Instance: "mongoDBDemoWebsite"
-   Deploying...
-
-   website: http://my-bucket-1258834142.cos-website.ap-guangzhou.myqcloud.com
-
-
-   8s › mongoDBDemoWebsite › Success
-   ```
    访问命令行输出的 website url，即可查看您的 Serverless 站点。
    
    ### 移除
