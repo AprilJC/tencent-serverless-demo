@@ -92,9 +92,7 @@
    >注意: 
    >1. 由于sls运行角色限制，需要用户登录[访问管理角色页面](https://console.cloud.tencent.com/cam/role)，手动为**SLS_QcsRole**添加**TCBFullAccess**的策略，否则无法正常运行
    >2. 当前 deploy --all指令只支持2.30.1及以上版本Serverless Framework Component，请确定您的组件已更新至最新版本
-   
-
-   
+   >3. 目前TCB端仅支持每月最多创建销毁4次环境，请谨慎创建，若超过4次部署将会报错
    
    访问命令行输出的 website url，即可查看您的 Serverless 站点。
    
