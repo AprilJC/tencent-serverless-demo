@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 	<title>Hello Serverless</title>
 	<link href="main.css" rel="stylesheet" media="all">
+	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="env.js"></script>
     <script>
 			function users() {
@@ -21,7 +22,7 @@
 						obj.innerHTML = outputStr
 						}
 					if(obj.style.display == "none"){
-							obj.style.display = "";
+							obj.style.display = ""
 						}
 					}
 				xmlhttp.open('POST', window.env.apiUrl, true)
@@ -38,7 +39,8 @@
 <div class="page-wrapper bg-img p-t-165 p-b-100">
 	<div class="wrapper">
 		<div id="card">
-				    <p id="titles">Serverless TCB Demo</p>
+				<p id="titles">Serverless TCB Demo</p>
+				<form method="GET" >
 					<div class="input-group1">
 							<label class="label">请输入用户名：</label>
 							<input class="input--style" type="text" id="username" placeholder="请输入用户名" required="required">
@@ -47,17 +49,18 @@
 							<div class="col-1">
 								<div class="input-group2">
 									<label class="label">年龄</label>
-									<input class="input--style" type="number" id="age" placeholder="请输入年龄" >
+									<input class="input--style" type="number" id="age" placeholder="请输入年龄" required="required">
 								</div>
 							</div>
 							<div class="col-2">
 								<div class="input-group2">
 									<label class="label">性别</label>
-									<input class="input--style" type="text" id="gender" placeholder="F/M" >
+									<input class="input--style" type="text" id="gender" placeholder="F/M" required="required">
 								</div>
 							</div>
 					</div>
 					<button class="btn-submit" type="submit" onclick="users()">将用户录入数据库</button>
+				</form>
 		</div>
 		<div style="display:none;" id="userList">
 		</div>
