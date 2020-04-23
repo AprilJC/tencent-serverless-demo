@@ -49,8 +49,8 @@
    找到**function->serverless.yaml**文件，填入自己的 SecretId 和 SecretKey。
    
    >说明:
-     1. 如果没有腾讯云账号，请先[注册新账号](https://cloud.tencent.com/register)。
-     2. 如果已有腾讯云账号，可以在[ API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取**SecretId**和**SecretKey**。
+   > 1. 如果没有腾讯云账号，请先[注册新账号](https://cloud.tencent.com/register)。
+   > 2. 如果已有腾讯云账号，可以在[ API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取**SecretId**和**SecretKey**。
    
    3.在`function->src`文件夹目录下，通过以下命令安装所需依赖：
    ```bash
