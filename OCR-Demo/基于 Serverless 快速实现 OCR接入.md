@@ -87,7 +87,7 @@ $ npm run bootstrap
 
 1.执行以下命令进行部署：
 
-```console
+```bash
 $ sls deploy --all
 
 serverless ⚡ framework
