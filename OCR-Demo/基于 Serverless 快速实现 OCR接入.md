@@ -16,7 +16,9 @@
 ## 接入效果
 应用页面如下，通过点击“Select“，完成本地图像上传，后台云函数将通过 OCR 完成文字识别工作
 
-![avatar](demo.png)
+<center>
+<img src="https://my-bucket-1258834142.cos.ap-guangzhou.myqcloud.com/demo.png" alt="CORS config" width="300">
+</center>
 
 ## 操作步骤
 
@@ -48,7 +50,9 @@ Components: 2.30.1
 登录[COS控制台](https://console.cloud.tencent.com/cos5)，创建新的 **公有存储桶** ，用于存放上传的图像，注意地域的选择。
 接下来，点开**基础配置**，为存储桶[配置跨域访问 CORS](https://cloud.tencent.com/document/product/436/13318)，具体配置如下：
 
-![avatar](config.png)
+<center>
+<img src="https://my-bucket-1258834142.cos.ap-guangzhou.myqcloud.com/config.png" alt="CORS config" width="300">
+</center>
 
 ### 配置
 
