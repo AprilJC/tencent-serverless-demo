@@ -51,7 +51,7 @@ Components: 2.30.1
 接下来，点开**基础配置**，为存储桶[配置跨域访问 CORS](https://cloud.tencent.com/document/product/436/13318)，具体配置如下：
 
 <center>
-<img src="https://my-bucket-1258834142.cos.ap-guangzhou.myqcloud.com/config.png" alt="CORS config" width="800">
+<img src="https://static-yugasun-com-1251556596.file.myqcloud.com/sls/cos-cors-setup.png" alt="CORS config" width="300">
 </center>
 
 ### 配置
