@@ -17,7 +17,7 @@
 应用页面如下，通过点击“Select“，完成本地图像上传，后台云函数将通过 OCR 完成文字识别工作
 
 <center>
-<img src="https://my-bucket-1258834142.cos.ap-guangzhou.myqcloud.com/demo.png" alt="demo" width="800">
+<img src="https://my-bucket-1258834142.cos.ap-guangzhou.myqcloud.com/demo.png" alt="demo" width="500">
 </center>
 
 ## 操作步骤
