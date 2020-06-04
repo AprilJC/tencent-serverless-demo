@@ -291,8 +291,8 @@ TENCENT_SECRET_KEY=xxx // 您账号的 SecretKey
 ```
 > 说明：
 
-- 如果没有腾讯云账号，请先 [注册新账号](https://cloud.tencent.com/register)。
-- 如果已有腾讯云账号，请保证您的账号已经授权了 AdministratorAccess 权限。 您可以
+> - 如果没有腾讯云账号，请先 [注册新账号](https://cloud.tencent.com/register)。
+> - 如果已有腾讯云账号，请保证您的账号已经授权了 AdministratorAccess 权限。 您可以
   在 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取 SecretId
   和 SecretKey。
 
@@ -413,6 +413,7 @@ mongoDBDemoSCF:
 >- 由于 sls 运行角色限制，需要用户登录 [访问管理角色页面](https://console.cloud.tencent.com/cam/role)，手动为**SLS_QcsRole**添加**TCBFullAccess**的策略，否则无法正常运行。
 >- 当前`deploy --all`指令只支持2.30.1及以上版本 Serverless Framework Component，请确定您的组件已更新至最新版本。
 >- 目前 TCB 端仅支持每月最多创建销毁**4**次环境，请谨慎创建，若超过4次部署将会报错。
+
 
 3. 执行 ```sls remove --all ```，可移除项目。
 
