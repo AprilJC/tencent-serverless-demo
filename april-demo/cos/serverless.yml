@@ -5,7 +5,6 @@ name: april-test
 component: cos
 
 inputs:
-  src: ./
   bucket: april-bucket
   region: ap-guangzhou
   protocol: https
