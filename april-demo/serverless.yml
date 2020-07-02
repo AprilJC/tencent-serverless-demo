@@ -1,0 +1,16 @@
+name: 
+author: 
+org: 
+description: 
+keywords: 
+repo: 
+readme: 
+license: MIT
+src:
+  src: ./
+  exclude:
+    - .env
+    - '.git/**'
+    - serverless.yml
+    - '**/node_modules'
+    - '**/package-lock.json'
