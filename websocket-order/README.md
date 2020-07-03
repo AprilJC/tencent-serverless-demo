@@ -55,7 +55,7 @@ sls deploy --all
 
 ### 附录：参考文档和配置：
 
-安装 serverless framework https://cloud.tencent.com/document/product/583/44753
-安装 Serverless DB https://cloud.tencent.com/document/product/1154/45447 
-api 网关的 yaml 完整配置 https://github.com/serverless-components/tencent-apigateway/blob/master/docs/configure.md
-scf 的 yaml 完整配置 https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
+- 安装 serverless framework https://cloud.tencent.com/document/product/583/44753
+- 安装 Serverless DB https://cloud.tencent.com/document/product/1154/45447 
+- api 网关的 yaml 完整配置 https://github.com/serverless-components/tencent-apigateway/blob/master/docs/configure.md
+- scf 的 yaml 完整配置 https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
