@@ -19,16 +19,16 @@ inputs:
     - path: /bill
       method: POST
       description: make_bill
-      enableCORS: true
+      enableCORS: TRUE
       function:
-        isIntegratedResponse: false
+        isIntegratedResponse: FALSE
         functionQualifier: $LATEST
         functionName: bill-dev
     #前端类型: HTTP, 后端类型: SCF
     - path: /get_shop_info
       method: GET
       description: get_shop_info
-      enableCORS: false
+      enableCORS: TRUE
       function:
         isIntegratedResponse: FALSE
         functionQualifier: $LATEST
@@ -39,10 +39,10 @@ inputs:
       protocol: WEBSOCKET
       function:
         # 前端类型为WEBSOCKET且后端为SCF时, transportFunctionName 为必填
-        transportFunctionName: wstrans-dev
-        registerFunctionName: wsregister-dev
-        cleanupFunctionName: wsunregister-dev
-        # transportFunctionName: ${output:${stage}:${app}:wstrans.functionName}
-        # registerFunctionName: ${output:${stage}:${app}:wsregister.functionName}
-        # cleanupFunctionName: ${output:${stage}:${app}:wsunregister.functionName}
+        # transportFunctionName: wstrans-dev
+        # registerFunctionName: wsregister-dev
+        # cleanupFunctionName: wsunregister-dev
+        transportFunctionName: ${output:${stage}:${app}:wstrans.functionName}
+        registerFunctionName: ${output:${stage}:${app}:wsregister.functionName}
+        cleanupFunctionName: ${output:${stage}:${app}:wsunregister.functionName}
     

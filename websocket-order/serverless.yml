@@ -1,0 +1,16 @@
+name: april-websocket-order
+author: april-test
+org: april-test
+description: april-test
+keywords: scf, python, websocket, postgresql
+repo: https://github.com/Jiachen0417/tencent-serverless-demo/blob/master/websocket-order
+readme: https://github.com/Jiachen0417/tencent-serverless-demo/blob/master/websocket-order/README.md
+license: MIT
+src:
+  src: ./
+  exclude:
+    - .env
+    - '.git/**'
+    - serverless.yml
+    - '**/node_modules'
+    - '**/package-lock.json'
