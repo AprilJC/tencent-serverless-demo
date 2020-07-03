@@ -1,0 +1,14 @@
+# serverless.yml
+
+org: test # (optional) serverless dashboard org. default is the first org you created during signup.
+app: wsApp # (optional) serverless dashboard app. default is the same as the name property.
+stage: dev # (optional) serverless dashboard stage. default is dev.
+
+component: vpc # (required) name of the component. In that case, it's vpc.
+name: vpc_Demo # (required) name of your vpc component instance.
+
+inputs:
+  region: ap-guangzhou
+  zone: ap-guangzhou-2
+  vpcName: serverless
+  subnetName: serverless

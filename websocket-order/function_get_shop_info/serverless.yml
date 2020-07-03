@@ -1,0 +1,20 @@
+component: scf
+name: getshopinfo
+org: test
+app: wsApp
+stage: dev
+
+inputs:
+  name: ${name}-${stage}
+  src: ./
+  runtime: Python2.7
+  region: ${env:REGION}
+  handler: get_shop_info.main_handler
+  timeout: 30
+  environment:
+    variables:
+      host: ${output:${stage}:${app}:ws_db.public.host}
+      port: ${output:${stage}:${app}:ws_db.public.port}
+      user: ${output:${stage}:${app}:ws_db.public.user}
+      password: ${output:${stage}:${app}:ws_db.public.password}
+      dbname: ${output:${stage}:${app}:ws_db.public.dbname}

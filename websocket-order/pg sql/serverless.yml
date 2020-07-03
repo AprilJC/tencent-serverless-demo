@@ -1,0 +1,15 @@
+# serverless.yml
+component: postgresql #(必填) 引用 component 的名称，当前用到的是 postgresql 组件
+name: ws_db # (必填) 该 postgresql 组件创建的实例名称
+org: test # (可选) 用于记录组织信息，默认值为您的腾讯云账户 appid
+app: wsApp # (可选) 该 sql 应用名称
+stage: dev # (可选) 用于区分环境信息，默认值是 dev
+
+inputs:
+  region: ap-guangzhou  # 可选 ap-guangzhou, ap-shanghai, ap-beijing
+  zone: ap-guangzhou-2  # 可选 ap-guangzhou-2, ap-shanghai-2, ap-beijing-3
+  dBInstanceName: serverlessDB
+  vpcConfig:
+    vpcId: ${output:${stage}:${app}:vpc_Demo.vpcId}
+    subnetId: ${output:${stage}:${app}:vpc_Demo.subnetId}
+  extranetAccess: true

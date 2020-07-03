@@ -1,0 +1,48 @@
+# serverless.yml
+
+component: apigateway # (必填) 组件名称，此处为 apigateway
+name: websocketapi # (必填) 实例名称
+org: test # (可选) 用于记录组织信息，默认值为您的腾讯云账户 appid
+app: wsApp # (可选) 该应用名称
+stage: dev # (可选) 用于区分环境信息，默认值为 dev
+
+inputs:
+  region: ${env:REGION}
+  protocols:
+    - http
+    - https
+  serviceName: serverlessws
+  description: the serverless websocket
+  environment: release
+  endpoints:
+    # 前端类型: HTTP, 后端类型: SCF
+    - path: /bill
+      method: POST
+      description: make_bill
+      enableCORS: true
+      function:
+        isIntegratedResponse: false
+        functionQualifier: $LATEST
+        functionName: bill-dev
+    #前端类型: HTTP, 后端类型: SCF
+    - path: /get_shop_info
+      method: GET
+      description: get_shop_info
+      enableCORS: false
+      function:
+        isIntegratedResponse: FALSE
+        functionQualifier: $LATEST
+        functionName: getshopinfo-dev
+    #前端类型: WEBSOCKET, 后端类型: SCF
+    - path: /pgws
+      method: GET
+      protocol: WEBSOCKET
+      function:
+        # 前端类型为WEBSOCKET且后端为SCF时, transportFunctionName 为必填
+        transportFunctionName: wstrans-dev
+        registerFunctionName: wsregister-dev
+        cleanupFunctionName: wsunregister-dev
+        # transportFunctionName: ${output:${stage}:${app}:wstrans.functionName}
+        # registerFunctionName: ${output:${stage}:${app}:wsregister.functionName}
+        # cleanupFunctionName: ${output:${stage}:${app}:wsunregister.functionName}
+    
