@@ -5,14 +5,21 @@ app: AprilApp # (可选) 用于记录组织信息. 默认与name相同.
 stage: dev # (可选) 用于区分环境信息，默认值是 dev
 
 inputs:
-  name: april-func # 云函数名称
+  name: april-func 
   src: ./
   handler: index.main_handler 
   runtime: Nodejs8.9 
-  region: ap-guangzhou # 函数所在区域
+  region: ap-guangzhou 
   description: My Serverless Function
-  memorySize: 128 # 内存大小，单位MB
-  timeout: 20 # 超时时间，单位秒
+  memorySize: 128 
+
+  timeout: 10
+  environment:
+    variables:
+        Bucket: ${output:${stage}:${app}:april-test.bucket}
+        TENCENT_APP_ID: ${env:TENCENT_APP_ID}
+        TENCENT_SECRET_ID: ${env:TENCENT_SECRET_ID}
+        TENCENT_SECRET_KEY: ${env:TENCENT_SECRET_KEY}
   
   events: # 触发器
     - cos: # cos触发器
