@@ -18,7 +18,8 @@
 1. [安装](#1-安装)
 2. [配置](#2-配置)
 3. [部署](#3-部署)
-4. [移除](#4-移除)
+4. [调用](#4-调用)
+5. [移除](#5-移除)
 
 &nbsp;
 
@@ -123,8 +124,18 @@ map_function:
 11s › maprecude › Success
 
 ```
+### 4. 调用
+1）找到模版文档中的 test.txt 文件。
 
-### 4. 移除
+2）切换至[对象存储控制台](https://console.cloud.tencent.com/cos/bucket)，选择创建好的 Bucket：srcmr，单击【上传文件】。
+
+3）在弹出的 “上传文件” 窗口中，选择 test.txt，单击【确定上传】。
+
+4）切换至[云函数控制台](https://console.cloud.tencent.com/scf/list?rid=8&ns=default)，查看执行结果。在运行日志中可以看到打印出来的日志信息。
+
+5）切换至 [对象存储控制台](https://console.cloud.tencent.com/cos/bucket)，选择创建好的 Bucket：destmr，查看生成的文件。
+
+### 5. 移除
 
 可以通过以下命令移除应用
 
