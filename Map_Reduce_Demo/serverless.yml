@@ -8,8 +8,8 @@ description: Deploy a MapReduce wordcount application. # 描述您的项目模�
 description-i18n:
   zh-cn: 本示例Demo演示怎么利用COS来做MapReduce，一共需要2个函数：map_function和reduce_function，3个COS Bucket：srcmr、middlestagebucket 和 destmr # 中文描述
 keywords: tencent, serverless, cos, scf, mapreduce # 关键字
-repo: https://github.com/serverless-components/tencent-fullstack # 源代码
-readme: https://github.com/serverless-components/tencent-fullstack/tree/master/README.md # 详细的说明文件
+repo: https://github.com/Jiachen0417/tencent-serverless-demo/blob/master/Map_Reduce_Demo # 源代码
+readme: https://github.com/Jiachen0417/tencent-serverless-demo/blob/master/Map_Reduce_Demo/README.md # 详细的说明文件
 license: MIT # 版权声明
 src: # 描述项目中的哪些文件需要作为模板发布
   src: ./ # 指定具体的相对目录，此目录下的文件将作为模板发布
