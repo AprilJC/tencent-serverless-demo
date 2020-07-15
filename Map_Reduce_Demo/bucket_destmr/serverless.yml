@@ -1,7 +1,7 @@
 # serverless.yml
 
 org: serverless
-app: MapReduce_Demo
+app: mapreduce-demo
 stage: dev
 component: cos
 name: destmr
