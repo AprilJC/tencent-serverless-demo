@@ -107,7 +107,7 @@ Map_Reduce_Demo
 
 ```text
 # serverless.yml
-name: MapReduce_Demo # 项目模板的名字
+name: mapreduce-demo # 项目模板的名字
 displayName: 基于 MapReduce 统计字数  #项目模板展示在控制台的名称（中文）
 author: Tencent Cloud, Inc. # 作者的名字
 org: Tencent Cloud, Inc. # 组织名称，可选
@@ -116,13 +116,14 @@ description: Deploy a MapReduce wordcount application. # 描述您的项目模�
 description-i18n:
   zh-cn: 本示例Demo演示怎么利用COS来做MapReduce，一共需要2个函数：map_function和reduce_function，3个COS Bucket：srcmr、middlestagebucket 和 destmr # 中文描述
 keywords: tencent, serverless, cos, scf, mapreduce # 关键字
-repo:  # 填入您源代码 repo
-readme:  # 填入您项目 readme 路径
+repo: # 源代码 Repo
+readme: # 详细的说明文件
 license: MIT # 版权声明
 src: # 描述项目中的哪些文件需要作为模板发布
   src: ./ # 指定具体的相对目录，此目录下的文件将作为模板发布
   exclude: #描述在指定的目录内哪些文件应该被排除
     - .env
+    - serverless.yml
 ```
 
 2. 上传模版
