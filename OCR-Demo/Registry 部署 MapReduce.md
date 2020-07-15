@@ -162,6 +162,7 @@ TENCENT_SECRET_KEY=123
 3. 部署项目
 
 ```console
+$ cd mapreduce-demo
 $ sls deploy --all
 serverless ⚡ framework
 
